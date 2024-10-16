@@ -1,25 +1,26 @@
-*{
+/* General Styles */
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     font-weight: bold;
 }
 
-body{
+body {
     background-color: #2c2c2c;
 }
 
 header {
     display: flex;
     align-items: center;
-    /* No need for justify-content here if you are handling it in nav */
+    width: 100%;
 }
 
 header nav {
     display: flex;
     width: 100%;
-    height: 80px;
-    justify-content: space-between; /* Spread out the logo and nav items */
+    height: 10vh;
+    justify-content: space-between;
     align-items: center;
     padding: 0 40px;
     background-color: #333;
@@ -36,90 +37,178 @@ header nav #header_logo a {
     padding: 12px 9px;
     font-family: "Montserrat Subrayada", sans-serif;
     font-weight: 700;
-    font-style: normal;
     border: 2px solid #ececec;
     margin-left: 190px;
 }
 
-
-   
-
-header nav ul{
+header nav ul {
     display: flex;
     list-style: none;
     justify-content: space-between;
     margin: 0px 100px;
-   
 }
 
-header nav ul li a{
+header nav ul li a {
     text-decoration: none;
     color: #ececec;
-    justify-content: space-between;
     padding: 2px 16px;
     font-family: "Montserrat Subrayada", sans-serif;
     font-weight: 700;
-    font-style: normal;
     border: 2px solid #ececec;
     border-radius: 50px;
     margin: 0 5px;
-    
 }
 
 main {
-    display: flex; /* Set the main element to flex */
-    flex-direction: row; /* Align children in a row */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    
 }
 
-main #title h1{
-    display: flex;
-    flex-direction: column;
-    height: 80vh;
-    justify-content: center;
-    margin: 0 150px;
-    padding: 0 60px;
-    font-family: "Montserrat Subrayada", sans-serif;
-    color: #ececec;
+main #title {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   margin: 90px 90px;
+   padding: 250px 20px;
+   color: #ececec;
+}
 
+main #title h1 {
+    font-family: "Montserrat Subrayada", sans-serif;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    margin-left: 30px;
 }
 
 #content {
     box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 10px 20px; /* Padding for the content */
-    max-width: 700px; /* Set a max width for the content area */
+    flex: 1;
+    max-width: 800px;
+    padding: 0px 100px;
 }
 
 #content p {
     font-family: "Montserrat Subrayada", sans-serif;
     font-size: 20px;
-    justify-content: space-between;
-    padding: 0px 2px;
     color: #ececec;
-    margin: 4px; /* Space between paragraphs */
+    margin: 4px;
 }
 
 button {
-    background-color: #ececec; /* Button background color */
-    color: #333; /* Button text color */
-    margin-right: 530px;
-    border: none; /* Remove default border */
-    border-radius: 30px; /* Rounded corners */
-    padding: 15px 20px; /* Padding inside the button */
-    font-size: 1rem; /* Button font size */
-    cursor: pointer; /* Pointer cursor on hover */
-    transition: background-color 0.3s; /* Smooth transition for hover effect */
+    background-color: #ececec;
+    color: #333;
+    border: none;
+    border-radius: 30px;
+    padding: 15px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
+
 main div img {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 169px 10px;
-    margin: 0 80px;
-    width: 300px; /* Maximum width for the image */
-    height: auto; /* Maintain aspect ratio */
+    width: 300px;
+    height: auto;
+    margin: 0 70px;
+    padding: 0 10px;
+}
+
+/* Media Queries for Laptops (up to 1024px) */
+@media (max-width: 1024px) {
+    header nav ul {
+        margin: 0 50px;
+    }
+
+    main {
+        flex-direction: row;
+        padding: 10px;
+    }
+
+    main #title {
+        margin: 0 5px;
+        font-size: 1.8rem;
+    }
+
+    #content {
+        padding: 10px 15px;
+    }
+
+    main div img {
+        width: 250px;
+    }
+}
+
+/* Media Queries for Tablets and Smaller Laptops (up to 768px) */
+@media (max-width: 768px) {
+    header nav ul {
+        flex-direction: column;
+        margin: 0;
+        padding: 0;
+    }
+
+    main {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    main #title {
+        font-size: 1.6rem;
+        margin: 0;
+    }
+
+    main div img {
+        width: 200px;
+        margin: 20px auto;
+    }
+
+    button {
+        width: 80%;
+        margin: 20px auto;
+        display: block;
+    }
+
+    #content {
+        max-width: 90%;
+        padding: 10px;
+    }
+}
+
+/* Media Queries for Mobile Devices (up to 480px) */
+@media (max-width: 480px) {
+    header nav ul {
+        margin: 0;
+        padding: 10px;
+    }
+
+    header nav ul li a {
+        padding: 5px 10px;
+        font-size: 0.9rem;
+        border-radius: 30px;
+    }
+
+    main {
+        flex-direction: column;
+        padding: 10px;
+        text-align: center;
+    }
+
+    main #title {
+        font-size: 1.4rem;
+    }
+
+    main div img {
+        width: 150px;
+    }
+
+    button {
+        width: 100%;
+        margin: 15px 0;
+        padding: 10px;
+    }
+
+    #content {
+        padding: 5px;
+        font-size: 16px;
+    }
 }
